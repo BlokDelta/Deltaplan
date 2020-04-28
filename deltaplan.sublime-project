@@ -1,0 +1,14 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+		}
+	],
+
+	"settings":
+	{
+		// root file for LaTeXTools plugin
+		"TEXroot": "./deltaplan.tex"
+	}
+}
