@@ -1,0 +1,88 @@
+% !TEX root = ./deltaplan.tex
+% creates a style to be imported
+\ProvidesPackage{deltaplan}
+
+%
+%   language, encoding and input/output
+%
+\usepackage[dutch]{babel}
+\usepackage{csquotes}
+\usepackage[T1]{fontenc}
+
+%
+%   typography
+%
+
+\usepackage{fontspec}
+\newfontfamily\worksanslight[
+	Ligatures=TeX, % enables ligatures such as dashes and quotes
+	BoldFont=Work Sans Medium,
+	NFSSFamily=worksanslight,
+	Scale=1.1
+]{Work Sans Light}
+
+\newfontfamily\ibmplexseriflight[
+	Ligatures=TeX, % enables ligatures such as dashes and quotes
+	BoldFont=IBM Plex Serif Medium,
+	NFSSFamily=ibmplexseriflight
+]{IBM Plex Serif Light}
+
+\renewcommand{\sfdefault}{worksanslight}
+\renewcommand{\familydefault}{\sfdefault}
+
+\KOMAoptions{fontsize=8pt}
+
+% \setsansfont{Fira Sans Book}[
+%   Ligatures=TeX,
+%   Numbers={OldStyle,Proportional},
+%   Scale=0.9,
+%   BoldFont=Fira Sans Medium
+%   ]
+
+
+
+
+% better kerning and spacing
+% TODO: consider setting the stretch lower (\usepackage[stretch=10]{microtype} of 1% instead of 2%) (https://tex.stackexchange.com/questions/553/what-packages-do-people-load-by-default-in-latex/586#comment1589_586)
+\usepackage{microtype}
+
+% increase line-spacing (this is a multiplication wrt. the original; see e.g. https://tex.stackexchange.com/a/30106)
+% package 'setspace' is used, because it disable the extra spacing in places like footnotes etc.
+\usepackage{setspace}
+\setstretch{1.3}
+
+\KOMAoptions{twoside=false}
+% set paper size
+% via https://tex.stackexchange.com/questions/59626/nicely-force-66-characters-per-line
+\newlength{\alphabet}
+\settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	textwidth=3.5\alphabet,
+	% bindingoffset=0.25in, % could use this when doing twosided document and binding; see p. 9 of http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/geometry/geometry.pdf ---> then also probably change ratio of inner and outer margin
+	top=1in,
+	bottom=1in,%
+	footskip=0.5in
+}
+
+% use a space between paragraphs instead of indented paragraphs
+\KOMAoptions{parskip}
+\setlength{\parskip}{10pt}
+
+
+%
+% for two column layout
+%
+% \usepackage{multicol}
+% \KOMAoptions{fontsize=7pt}
+% \renewcommand{\familydefault}{ibmplexseriflight}
+% \begin{multicols}{2}[\columnsep=20pt]
+% \newcommand{\introduction}[1]{\large \textbf{\sffamily #1}}
+% \geometry{textwidth=5\alphabet}
+
+
+%
+% bibliography
+%
+\usepackage[style=apa, sorting=nyt]{biblatex}
