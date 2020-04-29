@@ -32,14 +32,12 @@
 
 \KOMAoptions{fontsize=8pt}
 
-% \setsansfont{Fira Sans Book}[
-%   Ligatures=TeX,
-%   Numbers={OldStyle,Proportional},
-%   Scale=0.9,
-%   BoldFont=Fira Sans Medium
-%   ]
-
+% remove subsection numbering
 \renewcommand*{\subsectionformat}{}
+
+% supress 'LaTeX Font Warning' for Computer Modern
+\RequirePackage{fix-cm}
+
 
 
 % better kerning and spacing
@@ -86,3 +84,13 @@
 % bibliography
 %
 \usepackage[style=apa, sorting=nyt]{biblatex}
+
+
+%
+% misc
+%
+
+% to prevent space-eating macros
+\usepackage{xspace}
+
+\newcommand{\introduction}[1]{\large \textbf{#1}}

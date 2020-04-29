@@ -3,16 +3,24 @@
 \documentclass[DIV=calc]{scrbook}
 
 \usepackage{deltaplan}
-
 \bibliography{deltaplan.bib}
 
-\newcommand{\introduction}[1]{\large \textbf{#1}}
-\title{Deltaplan}
+\newcommand{\versionnumber}{v0.1.0\xspace}
+\title{Deltaplan \\ \versionnumber}
+\author{}
 
 \begin{document}
 
+\maketitle
+
+\tableofcontents
+
+\include{tex/visieschets}
+\include{tex/voorwoord}
+\include{tex/probleemstelling}
+\include{tex/doelstelling}
 \include{tex/uitgangspunten}
+\include{tex/maatregelen}
 
 % \printbibliography
-
 \end{document}
