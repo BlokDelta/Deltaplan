@@ -1,0 +1,20 @@
+%
+%   fonts, as used in typography.sty
+%
+
+\usepackage{fontspec}
+\newfontfamily\worksanslight[
+	Ligatures=TeX, % enables ligatures such as dashes and quotes
+	BoldFont=Work Sans Medium,
+	NFSSFamily=worksanslight,
+	Scale=1.1
+]{Work Sans Light}
+
+\newfontfamily\ibmplexseriflight[
+	Ligatures=TeX, % enables ligatures such as dashes and quotes
+	BoldFont=IBM Plex Serif Medium,
+	NFSSFamily=ibmplexseriflight
+]{IBM Plex Serif Light}
+
+\renewcommand{\sfdefault}{worksanslight}
+\renewcommand{\familydefault}{\sfdefault}

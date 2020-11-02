@@ -1,0 +1,18 @@
+%
+%   paper settings, as used in layout.sty
+%
+
+\KOMAoptions{twoside=false}
+% set paper size
+% via https://tex.stackexchange.com/questions/59626/nicely-force-66-characters-per-line
+\newlength{\alphabet}
+\settowidth{\alphabet}{\normalfont abcdefghijklmnopqrstuvwxyz}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	textwidth=3.5\alphabet,
+	% bindingoffset=0.25in, % could use this when doing twosided document and binding; see p. 9 of http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/geometry/geometry.pdf ---> then also probably change ratio of inner and outer margin
+	top=1in,
+	bottom=1in,%
+	footskip=0.5in
+}

@@ -1,0 +1,38 @@
+%
+%   typography
+%
+
+\input{style/fonts.sty}
+
+
+\KOMAoptions{fontsize=8pt}
+
+% remove subsection numbering
+\renewcommand*{\subsectionformat}{}
+
+% supress 'LaTeX Font Warning' for Computer Modern
+\RequirePackage{fix-cm}
+
+% for control over list environments, see http://tex.stackexchange.com/a/149103
+% adds option for different labels for enumerate lists
+\usepackage[inline,shortlabels]{enumitem}
+% via https://stackoverflow.com/questions/4968557/latex-very-compact-itemize/4974583#4974583
+\setlist{noitemsep, itemsep=3pt} % strangely enough, this is no the same as 'itemsep=3pt'?!
+% other options:
+% topsep,parsep,partopsep
+
+
+% better kerning and spacing
+% TODO: consider setting the stretch lower (\usepackage[stretch=10]{microtype} of 1% instead of 2%) (https://tex.stackexchange.com/questions/553/what-packages-do-people-load-by-default-in-latex/586#comment1589_586)
+\usepackage{microtype}
+
+% increase line-spacing (this is a multiplication wrt. the original; see e.g. https://tex.stackexchange.com/a/30106)
+% package 'setspace' is used, because it disable the extra spacing in places like footnotes etc.
+\usepackage{setspace}
+\setstretch{1.3}
+
+
+
+% use a space between paragraphs instead of indented paragraphs
+\KOMAoptions{parskip}
+\setlength{\parskip}{10pt}
