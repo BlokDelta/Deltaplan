@@ -38,6 +38,13 @@
 % supress 'LaTeX Font Warning' for Computer Modern
 \RequirePackage{fix-cm}
 
+% for control over list environments, see http://tex.stackexchange.com/a/149103
+% adds option for different labels for enumerate lists
+\usepackage[inline,shortlabels]{enumitem}
+% via https://stackoverflow.com/questions/4968557/latex-very-compact-itemize/4974583#4974583
+\setlist{noitemsep, itemsep=3pt} % strangely enough, this is no the same as 'itemsep=3pt'?!
+% other options:
+% topsep,parsep,partopsep
 
 
 % better kerning and spacing
