@@ -2,4 +2,10 @@
 %   bibliography
 %
 
-\usepackage[style=apa, sorting=nyt]{biblatex}
+\usepackage[style=apa,sorting=nyt,alldates=year]{biblatex}
+
+\usepackage{silence}
+\WarningFilter{latex}{Empty bibliography}
+
+% optional: to finetune subbibliography heading (now: 'Referenties')
+% \defbibheading{subbibliography}{\section*{References for Chapter \ref{refsection: \therefsection}}}

@@ -4,5 +4,24 @@
 
 \newcommand{\introduction}[1]{\large \textbf{#1}}
 \newcommand{\thema}[1]{\addchap{Thema: #1}}
-\newcommand{\voorstel}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+\newenvironment{voorstel}[1]{
+	\newpage
+	\begin{refsection}
+	\section*{#1}
+	\addcontentsline{toc}{section}{#1}
+}{
+	\printbibliography[heading=subbibliography]
+	\end{refsection}
+}
 \newcommand{\vertrekpunt}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+
+\usepackage{mdframed}
+
+\newenvironment{samenvatting}{\em}{}
+\newenvironment{uitdaging}{\subsection*{Uitdaging}}{}
+\newenvironment{overwegingen}{\subsection*{Overwegingen}}{}
+\newenvironment{aanbevelingen}{\subsection*{Aanbevelingen}}{}
+
+\newenvironment{infobox}[1]{\begin{mdframed}\textbf{#1}\\}{\end{mdframed}}
+\newcommand{\speerpunt}[1]{\textbf{#1}}
+\newcommand{\meeschrijver}[1]{\strong{Gebaseerd op een bijdrage van #1}}
