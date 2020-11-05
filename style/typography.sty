@@ -5,7 +5,7 @@
 \input{style/fonts.sty}
 
 
-\KOMAoptions{fontsize=8pt}
+\KOMAoptions{fontsize=7pt}
 
 % remove subsection numbering
 \renewcommand*{\subsectionformat}{}
@@ -33,6 +33,8 @@
 
 % use a space between paragraphs instead of indented paragraphs
 \KOMAoptions{parskip}
-\setlength{\parskip}{10pt}
+\setlength{\parskip}{5pt}
 
 \usepackage{hyperref}
+
+\RedeclareSectionCommand[beforeskip=5pt]{paragraph}

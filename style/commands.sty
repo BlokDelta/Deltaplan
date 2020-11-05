@@ -6,23 +6,124 @@
 
 \newcommand{\vertrekpunt}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
 
+\newcommand{\setvoorsteltitle}[1]{\def \currentvoorsteltitle {#1}}
+\newcommand{\unsetvoorsteltitle}{\let \currentvoorsteltitle \undefined}
+\newcommand{\putvoorsteltitle}{
+\ifdef{\currentvoorsteltitle}
+	{\textit{\color{white}\merriweather\KOMAoptions{fontsize=60pt}\currentvoorsteltitle}\unsetvoorsteltitle}
+	{VOORSTELTITLE NOT SET}
+}
+
 % environments for Voorstel
 \newenvironment{voorstel}[1]{
 	\newpage
-	\begin{refsection}
-	\section*{#1}
+	\setvoorsteltitle{#1}
 	\addcontentsline{toc}{section}{#1}
+	\begin{refsection}
 }{
-	\printbibliography[heading=subbibliography]
 	\end{refsection}
 }
-\newcommand{\meeschrijver}[1]{\textbf{Gebaseerd op een bijdrage van #1}}
-\newenvironment{samenvatting}{\textit}{}
-\newenvironment{uitdaging}{\subsection*{Uitdaging}}{}
-\newenvironment{overwegingen}{\subsection*{Overwegingen}}{}
+
+\newcommand{\meeschrijver}[1]{\setmeeschrijver{#1}}
+\newcommand{\setmeeschrijver}[1]{\def \currentmeeschrijver {#1}}
+\newcommand{\unsetmeeschrijver}{\let \currentmeeschrijver \undefined}
+\newcommand{\putmeeschrijver}{
+\ifdef{\currentmeeschrijver}
+	{\textit{\merriweather gebaseerd op een bijdrage van \currentmeeschrijver}\unsetmeeschrijver{}}
+	{}
+}
+
+\usepackage{mwe}
+\newcommand{\headerimg}[1]{\setheaderimg{#1}}
+\newcommand{\setheaderimg}[1]{\def \currentheaderimg {#1}}
+\newcommand{\unsetheaderimg}{\let \currentheaderimg \undefined}
+\newcommand{\putheaderimg}{
+\ifdef{\currentheaderimg}
+	{
+	\begin{center}
+		\makebox[\textwidth]{
+			\includegraphics[width=\paperwidth]{\currentheaderimg}
+		}
+	\end{center}
+	\unsetheaderimg{}
+	}
+	{
+	\begin{center}
+		\makebox[\textwidth]{
+			\includegraphics[width=\paperwidth,height=.5\paperwidth]{example-image}
+		}
+	\end{center}
+	}
+}
+
+\newenvironment{samenvatting}
+{
+	\putheaderimg{}
+	\vspace{-100pt}
+	\begin{mdframed}[
+		topline=false,
+		rightline=false,
+		bottomline=false,
+		leftline=false,
+		backgroundcolor=pink-pastel,
+		innertopmargin=-53pt,
+		innerrightmargin=15pt,
+		innerbottommargin=15pt,
+		innerleftmargin=15pt
+	]
+	\putvoorsteltitle{}
+
+	\vspace{-4pt}
+	\begin{raggedright}
+	\itshape\merriweather\KOMAoptions{fontsize=14pt}
+}
+{
+	\end{raggedright}
+	\end{mdframed}
+	\par
+}
+\newenvironment{uitdaging}{\bfseries}{}
+\newenvironment{overwegingen}{}{}
+
 \usepackage{mdframed}
-\newenvironment{infobox}[1]{\begin{mdframed}\textbf{#1}\\}{\end{mdframed}}
-\newenvironment{aanbevelingen}{\subsection*{Aanbevelingen}}{}
+\mdfdefinestyle{borderless}{
+	topline=false,
+	rightline=false,
+	bottomline=false,
+	leftline=false,
+	backgroundcolor=pink-pastel!30,
+	innertopmargin=15pt,
+	innerrightmargin=15pt,
+	innerbottommargin=15pt,
+	innerleftmargin=15pt,
+	skipabove=10pt,
+	skipbelow=10pt
+}
+
+\newenvironment{infobox}[1]{
+	\begin{mdframed}[
+		style=borderless,
+		backgroundcolor=pink-pastel!30
+	]
+	\textbf{#1}\\
+}
+{
+	\end{mdframed}
+}
+
+\newenvironment{aanbevelingen}
+{
+	\begin{mdframed}[style=borderless,
+	backgroundcolor=pink-purple]
+	\color{white}
+	\textbf{\large Voorstel}
+}
+{
+	\end{mdframed}
+	\putmeeschrijver{}
+	\printbibliography[heading=subbibliography]
+}
+
 \newcommand{\speerpunt}[1]{\textbf{#1}}
 
 \newcommand{\term}[1]{\textit{#1}}

@@ -16,13 +16,13 @@ We use the XeLaTeX engine. This is defined with the `!TEX program` statement in 
 
 When using BasicTeX, you might need to install additional packages:
 
-	sudo tlmgr install xargs biblatex biblatex-apa biber todonotes csquotes xspace needspace mdframed silence
+	sudo tlmgr install xargs biblatex biblatex-apa biber todonotes csquotes xspace needspace mdframed silence trimspaces mwe multicol
 
 Possibly at some point also
 
-	sudo tlmgr install footmisc enumitem tocbibind logreq cleveref titlesec multicol
+	sudo tlmgr install footmisc enumitem tocbibind logreq cleveref titlesec
 
 
-You also need to have Work Sans installed. Download it [here](https://weiweihuanghuang.github.io/Work-Sans/) or use Homebrew:
+You also need to have [Work Sans](https://weiweihuanghuang.github.io/Work-Sans/) and [Merriweather](https://github.com/SorkinType/Merriweather) installed. They are available from Homebrew:
 
-	brew cask install font-work-sans
+	brew cask install font-work-sans font-merriweather
