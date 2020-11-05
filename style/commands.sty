@@ -2,8 +2,11 @@
 %   specific commands
 %
 
-\newcommand{\introduction}[1]{\large \textbf{#1}}
 \newcommand{\thema}[1]{\addchap{Thema: #1}}
+
+\newcommand{\vertrekpunt}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
+
+% environments for Voorstel
 \newenvironment{voorstel}[1]{
 	\newpage
 	\begin{refsection}
@@ -13,15 +16,14 @@
 	\printbibliography[heading=subbibliography]
 	\end{refsection}
 }
-\newcommand{\vertrekpunt}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
-
-\usepackage{mdframed}
-
-\newenvironment{samenvatting}{\em}{}
+\newcommand{\meeschrijver}[1]{\textbf{Gebaseerd op een bijdrage van #1}}
+\newenvironment{samenvatting}{\textit}{}
 \newenvironment{uitdaging}{\subsection*{Uitdaging}}{}
 \newenvironment{overwegingen}{\subsection*{Overwegingen}}{}
-\newenvironment{aanbevelingen}{\subsection*{Aanbevelingen}}{}
-
+\usepackage{mdframed}
 \newenvironment{infobox}[1]{\begin{mdframed}\textbf{#1}\\}{\end{mdframed}}
+\newenvironment{aanbevelingen}{\subsection*{Aanbevelingen}}{}
 \newcommand{\speerpunt}[1]{\textbf{#1}}
-\newcommand{\meeschrijver}[1]{\strong{Gebaseerd op een bijdrage van #1}}
+
+\newcommand{\term}[1]{\textit{#1}}
+\newcommand{\COO}{\texorpdfstring{CO\textsubscript{2}}{CO2}\xspace}
