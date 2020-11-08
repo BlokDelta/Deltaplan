@@ -6,6 +6,31 @@
 
 \newcommand{\vertrekpunt}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
 
+\usepackage{mdframed}
+\mdfdefinestyle{borderless}{
+	topline=false,
+	rightline=false,
+	bottomline=false,
+	leftline=false,
+	backgroundcolor=pink-pastel!30,
+	innertopmargin=15pt,
+	innerrightmargin=15pt,
+	innerbottommargin=15pt,
+	innerleftmargin=15pt,
+	skipabove=10pt,
+	skipbelow=10pt
+}
+\mdfdefinestyle{borderless-purple}{
+	style=borderless,
+	backgroundcolor=pink-purple
+}
+\mdfdefinestyle{borderless-pink-pastel}{
+	style=borderless,
+	backgroundcolor=pink-pastel
+}
+
+
+
 % length used by \smartresize
 \newlength{\myl}
 % resize only when necessary to fit linewidth
@@ -81,11 +106,7 @@ VOORSTELTITLE NOT SET
 	\putheaderimg{}
 	\vspace{-100pt}
 	\begin{mdframed}[
-		topline=false,
-		rightline=false,
-		bottomline=false,
-		leftline=false,
-		backgroundcolor=pink-pastel,
+		style=borderless-pink-pastel,
 		innertopmargin=-56pt,
 		innerrightmargin=12pt,
 		innerbottommargin=10pt,
@@ -105,25 +126,11 @@ VOORSTELTITLE NOT SET
 \newenvironment{uitdaging}{\bfseries}{}
 \newenvironment{overwegingen}{}{}
 
-\usepackage{mdframed}
-\mdfdefinestyle{borderless}{
-	topline=false,
-	rightline=false,
-	bottomline=false,
-	leftline=false,
-	backgroundcolor=pink-pastel!30,
-	innertopmargin=15pt,
-	innerrightmargin=15pt,
-	innerbottommargin=15pt,
-	innerleftmargin=15pt,
-	skipabove=10pt,
-	skipbelow=10pt
-}
+
 
 \newenvironment{infobox}[1]{
 	\begin{mdframed}[
-		style=borderless,
-		backgroundcolor=pink-pastel!30
+		style=borderless
 	]
 	\textbf{#1}\\
 }
@@ -133,10 +140,10 @@ VOORSTELTITLE NOT SET
 
 \newenvironment{aanbevelingen}
 {
-	\begin{mdframed}[style=borderless,
-	backgroundcolor=pink-purple]
+	\begin{mdframed}[style=borderless-purple]
 	\color{white}
 	\textbf{\large Voorstel}
+
 }
 {
 	\end{mdframed}
