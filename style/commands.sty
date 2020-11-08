@@ -6,12 +6,32 @@
 
 \newcommand{\vertrekpunt}[1]{\section*{#1}\addcontentsline{toc}{section}{#1}}
 
+% length used by \smartresize
+\newlength{\myl}
+% resize only when necessary to fit linewidth
+\newcommand{\smartresize}[1]{
+	\settowidth{\myl}{#1}
+	\ifdimcomp{\the\linewidth}{>}{\the\myl}
+	{
+		#1
+	}
+	{
+		\resizebox{\linewidth}{!}{#1}
+	}
+}
+
 \newcommand{\setvoorsteltitle}[1]{\def \currentvoorsteltitle {#1}}
 \newcommand{\unsetvoorsteltitle}{\let \currentvoorsteltitle \undefined}
-\newcommand{\putvoorsteltitle}{
-\ifdef{\currentvoorsteltitle}
-	{\textit{\color{white}\merriweather\KOMAoptions{fontsize=60pt}\currentvoorsteltitle}\unsetvoorsteltitle}
-	{VOORSTELTITLE NOT SET}
+\newcommand{\putvoorsteltitle}{%
+\ifdef{\currentvoorsteltitle}{%
+\smartresize{%
+\textit{\color{white}\merriweather\KOMAoptions{fontsize=60pt}\currentvoorsteltitle}%
+}%
+\unsetvoorsteltitle%
+}
+{
+VOORSTELTITLE NOT SET
+}
 }
 
 % environments for Voorstel
@@ -66,12 +86,12 @@
 		bottomline=false,
 		leftline=false,
 		backgroundcolor=pink-pastel,
-		innertopmargin=-53pt,
-		innerrightmargin=15pt,
-		innerbottommargin=15pt,
-		innerleftmargin=15pt
+		innertopmargin=-56pt,
+		innerrightmargin=12pt,
+		innerbottommargin=10pt,
+		innerleftmargin=12pt
 	]
-	\putvoorsteltitle{}
+	\hspace{-20pt}\putvoorsteltitle{}
 
 	\vspace{-4pt}
 	\begin{raggedright}
@@ -80,7 +100,7 @@
 {
 	\end{raggedright}
 	\end{mdframed}
-	\par
+	\vspace{6pt}
 }
 \newenvironment{uitdaging}{\bfseries}{}
 \newenvironment{overwegingen}{}{}
