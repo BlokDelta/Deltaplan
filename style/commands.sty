@@ -50,7 +50,7 @@
 \newcommand{\putvoorsteltitle}{%
 \ifdef{\currentvoorsteltitle}{%
 \smartresize{%
-\textit{\color{white}\merriweather\KOMAoptions{fontsize=60pt}\currentvoorsteltitle}%
+\textit{\ifdraft{}{\color{white}}\merriweather\KOMAoptions{fontsize=60pt}\currentvoorsteltitle}%
 }%
 \unsetvoorsteltitle%
 }
@@ -141,7 +141,7 @@ VOORSTELTITLE NOT SET
 \newenvironment{aanbevelingen}
 {
 	\begin{mdframed}[style=borderless-purple]
-	\color{white}
+	\ifdraft{}{\color{white}}
 	\textbf{\large Voorstel}
 
 }
