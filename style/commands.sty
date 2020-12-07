@@ -49,9 +49,9 @@
 \newcommand{\unsetvoorsteltitle}{\let \currentvoorsteltitle \undefined}
 \newcommand{\putvoorsteltitle}{%
 \ifdef{\currentvoorsteltitle}{%
-\smartresize{%
-\textit{\ifdraft{}{\color{white}}\merriweather\KOMAoptions{fontsize=60pt}\currentvoorsteltitle}%
-}%
+% \smartresize{%
+\textit{\ifdraft{}{\color{white}}\merriweather\KOMAoptions{fontsize=40pt}\currentvoorsteltitle}%
+% }%
 \unsetvoorsteltitle%
 }
 {
@@ -104,19 +104,19 @@ VOORSTELTITLE NOT SET
 \newenvironment{samenvatting}
 {
 	\putheaderimg{}
-	\vspace{-100pt}
+	\vspace{-80pt}
 	\begin{mdframed}[
 		style=borderless-pink-pastel,
-		innertopmargin=-56pt,
-		innerrightmargin=12pt,
-		innerbottommargin=10pt,
-		innerleftmargin=12pt
+		innertopmargin=-36pt,
+		innerrightmargin=16pt,
+		innerbottommargin=16pt,
+		innerleftmargin=16pt
 	]
-	\hspace{-20pt}\putvoorsteltitle{}
+	\putvoorsteltitle{}
 
-	\vspace{-4pt}
+	\vspace{-2pt}
 	\begin{raggedright}
-	\itshape\merriweather\KOMAoptions{fontsize=14pt}
+	\itshape\merriweather\KOMAoptions{fontsize=12pt}\doublespacing
 }
 {
 	\end{raggedright}
