@@ -45,12 +45,20 @@
 	}
 }
 
+
+% hacky way to offset text
+% https://tex.stackexchange.com/q/316426/213645
+\newcommand{\negphantom}[1]{\settowidth{\dimen0}{#1}\hspace*{-\dimen0}}
+\usepackage{xcolor,pgf}
+% hacky way to force a text group to include the height of its descenders
+\newcommand{\invisibledescender}{\pgfsetfillopacity{0}f\pgfsetfillopacity{1}\negphantom{f}}
+
 \newcommand{\setvoorsteltitle}[1]{\def \currentvoorsteltitle {#1}}
 \newcommand{\unsetvoorsteltitle}{\let \currentvoorsteltitle \undefined}
 \newcommand{\putvoorsteltitle}{%
 \ifdef{\currentvoorsteltitle}{%
 % \smartresize{%
-\textit{\ifdraft{}{\color{white}}\merriweather\KOMAoptions{fontsize=40pt}\currentvoorsteltitle}%
+\textit{\ifdraft{}{\color{white}}\merriweather\KOMAoptions{fontsize=40pt}\invisibledescender{}\currentvoorsteltitle}%
 % }%
 \unsetvoorsteltitle%
 }
@@ -109,16 +117,18 @@ VOORSTELTITLE NOT SET
 		style=borderless-pink-pastel,
 		innertopmargin=-36pt,
 		innerrightmargin=16pt,
-		innerbottommargin=16pt,
+		innerbottommargin=10pt,
 		innerleftmargin=16pt
 	]
 	\putvoorsteltitle{}
 
 	\vspace{-2pt}
 	\begin{raggedright}
-	\itshape\merriweather\KOMAoptions{fontsize=12pt}\doublespacing
+	\itshape\merriweather\KOMAoptions{fontsize=12pt}
+	\setstretch{1.2}
 }
 {
+	\par % needed to end paragraph so \setstretch works
 	\end{raggedright}
 	\end{mdframed}
 	\vspace{6pt}
