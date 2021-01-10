@@ -1,6 +1,5 @@
 # design
 
-- mogelijkheid maken voor bijschriften bij foto's, rechts-horizontaal (en met mooi CC-BY-SA ofzo tekentje)
 - betere spacing en tekst 'Referenties' ('Literatuur'? En dan op zon zelfde manier als in de lopende tekst)
 
 

@@ -86,19 +86,44 @@ VOORSTELTITLE NOT SET
 	{}
 }
 
+\usepackage{xparse}
 \usepackage{mwe}
-\newcommand{\headerimg}[1]{\setheaderimg{#1}}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% two optional commands with no default (#2, #3), one mandatory command (#1) - https://tex.stackexchange.com/a/29975/213645
+\NewDocumentCommand{\headerimg}{ O{} O{} m}{\setheaderimgdesc{#1}\setheaderimgcopy{#2}\setheaderimg{#3}}
 \newcommand{\setheaderimg}[1]{\def \currentheaderimg {#1}}
+\newcommand{\setheaderimgdesc}[1]{\def \currentheaderimgdesc {#1}}
+\newcommand{\setheaderimgcopy}[1]{\def \currentheaderimgcopy {#1}}
 \newcommand{\unsetheaderimg}{\let \currentheaderimg \undefined}
+\newcommand{\unsetheaderimgdesc}{\let \currentheaderimgdesc \undefined}
+\newcommand{\unsetheaderimgcopy}{\let \currentheaderimgcopy \undefined}
+
+
 \newcommand{\putheaderimg}{
 \ifdef{\currentheaderimg}
 	{
 	\begin{center}
 		\makebox[\textwidth]{
-			\includegraphics[width=\paperwidth]{\currentheaderimg}
+		% solution to put text over image thanks to https://tex.stackexchange.com/a/260949/213645
+		\begin{tikzpicture}%
+			\node[anchor=south west, inner sep=0] (X) at (0,0){\includegraphics[width=\paperwidth]{\currentheaderimg}};%
+
+			\begin{scope}[x={(X.south east)},y={(X.north west)}]%
+			%% This makes all measurements with no units into fractions of the width
+			%% and height of the graphic contained in the node.
+			\node[text width=3in, rotate=90, anchor=west] (Z) at (0.97,0.03) {%
+				\small\color{purple-white}\textbf{\currentheaderimgdesc} \\
+				\currentheaderimgcopy
+			};
+			\end{scope}%
+		\end{tikzpicture}
 		}
 	\end{center}
 	\unsetheaderimg{}
+	\unsetheaderimgdesc{}
+	\unsetheaderimgcopy{}
 	}
 	{
 	\begin{center}
@@ -167,3 +192,5 @@ VOORSTELTITLE NOT SET
 
 \newcommand{\term}[1]{\textit{#1}}
 \newcommand{\COO}{\texorpdfstring{CO\textsubscript{2}}{CO2}\xspace}
+
+\newcommand{\CC}{\raisebox{-.5\fontcharht\font`\M}{\includegraphics[height=2\fontcharht\font`\M]{img/cc-purple-white.png}}}
