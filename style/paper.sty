@@ -12,7 +12,10 @@
 	a4paper,
 	textwidth=0.85\paperwidth,
 	% bindingoffset=0.25in, % could use this when doing twosided document and binding; see p. 9 of http://ftp.snt.utwente.nl/pub/software/tex/macros/latex/contrib/geometry/geometry.pdf ---> then also probably change ratio of inner and outer margin
-	top=1in,
-	bottom=1in,%
-	footskip=0.5in
+	top=0pt,
+	% top=-1pt, % prevents artifacts
+	bottom=0.5in,%
+	includehead,
+	headsep=20pt,
+	head=30pt
 }

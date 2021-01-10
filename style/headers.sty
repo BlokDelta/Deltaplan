@@ -1,0 +1,11 @@
+\usepackage{scrlayer-scrpage}
+\setheadwidth{paper}
+
+% via https://tex.stackexchange.com/a/161291/213645
+\automark[chapter]{chapter}
+
+\chead{\colorbox{pink-accent}{\begin{minipage}[c][30pt]{\paperwidth}\begin{center}\begin{minipage}{0.85\paperwidth}\vspace{8pt}\normalfont\large\color{purple-white}
+\ifthispageodd{\thepage\hfill \textbf{Deltaplan}}{\textbf{\leftmark} \hfill \thepage}
+\end{minipage}\end{center}\end{minipage}}}
+
+\cfoot{}
