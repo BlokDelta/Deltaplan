@@ -1,6 +1,6 @@
 # Deltaplan
 
-Source files for the Deltaplan (Dutch version of a Green New Deal), as proposed by the [Delta group.](https://blokdelta.nl/)
+Source files for the Deltaplan (Dutch version of a Green New Deal), as proposed by the [Delta group.](https://delta.groenlinks.nl/)
 
 # Development
 
