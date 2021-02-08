@@ -1,7 +1,6 @@
 ## todo
 
 - alle units netjes doen met die package
-- replace all CO2 with \COO
 - colofon
 
 ## extra
