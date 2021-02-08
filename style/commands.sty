@@ -175,17 +175,43 @@ VOORSTELTITLE NOT SET
 	\end{mdframed}
 }
 
-\newenvironment{aanbevelingen}
+
+\newenvironment{aanbevelingen-basis}
 {
 	\begin{mdframed}[style=borderless-purple]
-	\ifdraft{}{\color{white}}
+	\ifdraft{}{\color{pink-white}}
+}
+{
+	\end{mdframed}
+}
+\newenvironment{aanbevelingen-start}
+{
+	\begin{aanbevelingen-basis}
 	\textbf{\large Voorstel}
 
 }
 {
-	\end{mdframed}
-	\putmeeschrijver{}
+	\end{aanbevelingen-basis}
+}
+\newenvironment{aanbevelingen-end}
+{
+	\begin{aanbevelingen-basis}
+}
+{
+	\end{aanbevelingen-basis}
 	\printbibliography[heading=subbibliography]
+	\vspace{2ex}
+	\putmeeschrijver{}
+}
+
+\newenvironment{aanbevelingen}
+{
+	\begin{aanbevelingen-end}
+	\textbf{\large Voorstel}
+
+}
+{
+	\end{aanbevelingen-end}
 }
 
 \newcommand{\speerpunt}[1]{\textbf{#1}}
