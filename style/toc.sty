@@ -1,0 +1,11 @@
+% remove dots between section title and page number
+\RedeclareSectionCommand[
+  toclinefill=\hfill
+]{section}
+
+% for two-column TOC
+\usepackage[toc]{multitoc}
+
+% similar to \addcontentsline: add to TOC, but now without page number
+% note that package 'hyperref' modifies the 'addcontents' command, so we need more of these empty arguments to satisfy hyperref. Hyperref should be loaded before this.
+\newcommand*{\addcontentslinenopage}[3]{\addtocontents{#1}{\protect\contentsline{#2}{#3}{}{}}}

@@ -76,12 +76,12 @@ VOORSTELTITLE NOT SET
 }{
 	\end{refsection}
 }
-\usepackage{tocloft} % for \cftaddtitleline
 \newenvironment{voorstel-concept}[1]{
 	% similar to \addcontentsline, but now without page number
 	% via https://tex.stackexchange.com/a/50040/213645
-	\cftaddtitleline{toc}{section}{#1}{}
-	% \addcontentsline{toc}{section}{#1}
+	% \cftaddtitleline{toc}{section}{#1}{}
+	\addcontentslinenopage{toc}{section}{#1}
+	\textbf{#1}
 }{}
 \newenvironment{visie-concept}[1]{}{}
 
