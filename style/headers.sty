@@ -1,5 +1,8 @@
 % draft=false prevents rulers in draft mode
 \usepackage[draft=false]{scrlayer-scrpage}
+% also add header to first page of chapter
+% via https://tex.stackexchange.com/a/573609/213645
+\renewcommand{\chapterpagestyle}{scrheadings}
 \setheadwidth{paper}
 
 % via https://tex.stackexchange.com/a/161291/213645
