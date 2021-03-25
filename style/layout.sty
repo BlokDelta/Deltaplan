@@ -13,3 +13,6 @@
 
 % https://tex.stackexchange.com/a/15122/213645
 \newcommand*\ruleline[1]{\par\noindent\raisebox{.5ex}{\makebox[\linewidth]{\hrulefill\hspace{1ex}\raisebox{-.5ex}{#1}\hspace{1ex}\hrulefill}}}
+
+% reduce spacing before chapter title
+\RedeclareSectionCommand[beforeskip=10pt]{chapter}
