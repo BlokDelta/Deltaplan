@@ -16,7 +16,7 @@ We use the XeLaTeX engine. This is defined with the `!TEX program` statement in 
 
 When using BasicTeX, you might need to install additional packages:
 
-	sudo tlmgr install xargs biblatex biblatex-apa biber todonotes csquotes xspace needspace mdframed silence trimspaces mwe multicol
+	sudo tlmgr install xargs biblatex biblatex-apa biber todonotes csquotes xspace needspace mdframed silence trimspaces mwe multicol tocloft
 
 Possibly at some point also
 
