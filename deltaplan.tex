@@ -5,19 +5,20 @@
 \usepackage{style/deltaplan}
 \bibliography{deltaplan.bib}
 
-\newcommand{\versionnumber}{v0.2.0\xspace}
-\title{Deltaplan \\ \versionnumber}
-\author{}
+\newcommand{\versionnumber}{v0.2.1\xspace}
+\newcommand{\concept}{concept\xspace} % remove for final version
+\newcommand{\eindredactie}{Jantine Röttgering \& Rens Baardman}
+
+
+\title{Deltaplan}
+\subtitle{Nederland klimaatneutraal in 2030:\\ambitieus en rechtvaardig}
+\author{Rens Baardman, Edo van Baars, Otto Barten, Bram van den Groenendaal, Mark Leenen \& Walter Wittkamp}
 
 \begin{document}
 
 \includepdf[pages=-, pagecommand=\thispagestyle{plain}]{img/frontpage_v5.pdf}
 
-\maketitle
-
-% necessary because maketitle resets the page count to 1
-\setcounter{page}{3}
-
+\include{tex/titlepage}
 
 \tableofcontents
 
