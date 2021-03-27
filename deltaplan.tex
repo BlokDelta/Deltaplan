@@ -11,7 +11,13 @@
 
 \begin{document}
 
+\includepdf[pages=-, pagecommand=\thispagestyle{plain}]{img/frontpage_v5.pdf}
+
 \maketitle
+
+% necessary because maketitle resets the page count to 1
+\setcounter{page}{3}
+
 
 \tableofcontents
 
