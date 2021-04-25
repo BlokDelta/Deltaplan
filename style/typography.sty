@@ -36,5 +36,8 @@
 \setlength{\parskip}{5pt}
 
 \usepackage{hyperref}
+% fix error of gap between 'part' and 'chapter' level
+% https://tex.stackexchange.com/a/432621/213645
+\usepackage{bookmark}
 
 \RedeclareSectionCommand[beforeskip=5pt]{paragraph}

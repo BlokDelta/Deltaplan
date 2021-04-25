@@ -3,6 +3,7 @@
 %
 
 \newcommand{\thema}[1]{\addchap{Thema: #1}}
+\newcommand{\themaconcept}[1]{\addcontentslinenopage{toc}{chapter}{Thema: #1}}
 
 \newcommand{\vertrekpunt}[1]{\par \vspace{10pt} \textbf{\large #1}}
 
@@ -77,11 +78,7 @@ VOORSTELTITLE NOT SET
 	\end{refsection}
 }
 \newenvironment{voorstel-concept}[1]{
-	% similar to \addcontentsline, but now without page number
-	% via https://tex.stackexchange.com/a/50040/213645
-	% \cftaddtitleline{toc}{section}{#1}{}
 	\addcontentslinenopage{toc}{section}{#1}
-	\textbf{#1}\\
 }{}
 \newenvironment{visie-concept}[1]{}{}
 
